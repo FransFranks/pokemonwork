@@ -5,23 +5,21 @@
     <%- include("../partials/header") %>
 </head>
 
-<body class="bg-gray-100 text-gray-800">
-    <div class="container mx-auto p-5">
-        <h1 class="text-3xl font-bold text-center mb-5 capitalize">
+<body class="bg-red-600 text-gray-100 min-h-screen flex flex-col items-center">
+    <div class="container mx-auto p-5 bg-white rounded-lg shadow-lg max-w-4xl">
+        <h1 class="text-3xl font-bold text-center text-red-600 mb-5 capitalize">
             <%= pokemon.name %>
         </h1>
         <div class="flex flex-col items-center">
-            <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>" class="w-40 h-40" />
-            <p class="text-lg font-semibold">Height: <%= pokemon.height %>
-            </p>
-            <p class="text-lg font-semibold">Weight: <%= pokemon.weight %>
-            </p>
-            <p class="text-lg font-semibold">
-                Type: <%= pokemon.types.map(t=> t.type.name).join(', ') %>
+            <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>" class="w-40 h-40 mb-4" />
+            <p class="text-lg font-semibold text-gray-800">Height: <%= pokemon.height %></p>
+            <p class="text-lg font-semibold text-gray-800">Weight: <%= pokemon.weight %></p>
+            <p class="text-lg font-semibold text-gray-800">
+                Type: <%= pokemon.types.map(t => t.type.name).join(', ') %>
             </p>
         </div>
         <div class="text-center mt-5">
-            <a href="/" class="px-4 py-2 bg-blue-500 text-white rounded-lg">Back</a>
+            <a href="/" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700">Back</a>
         </div>
     </div>
     <%- include("../partials/footer") %>
